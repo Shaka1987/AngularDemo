@@ -1,1 +1,7 @@
-<p>search works!</p>
+<div class="search">
+    <input type="text" [(ngModel)]="keyword"/> <button (click) ="doSearch()">搜索</button>
+<hr>
+<ul>
+    <li *ngFor="let item of historylist; let key = item">{{item}} ------ <button (click)="deleteHistory(key)">x</button></li>
+</ul>
+</div>
