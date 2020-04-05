@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { StorageService } from './services/storage.service';
+import { HomeComponent } from './components/home/home.component';
+import { NewsComponent } from './components/news/news.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TransitionComponent } from './components/transition/transition.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    TodolistComponent
+    TodolistComponent,
+    HomeComponent,
+    NewsComponent,
+    HeaderComponent,
+    TransitionComponent
   ],
   imports: [
     BrowserModule,

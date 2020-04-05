@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     const serachlist = this.storage.get('searchlist');
-    if(serachlist) {
+    if (serachlist) {
       this.historylist = serachlist;
     }
   }
