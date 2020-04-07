@@ -8,6 +8,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   public flag: any = true;
+  public title = 'home title';
   constructor() { }
 
   ngOnInit(): void {
@@ -24,4 +25,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     oBox1.style.color = 'blue';
   }
 
+  run() {
+    alert('this is home component run!');
+  }
+  recieveMsg(event) {
+    alert(event);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  @Input() headerTitle: any;
+  @Input() parentRun: any;
+  @Input() parent: any;
+  @Output() private outer = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -14,4 +17,10 @@ export class HeaderComponent implements OnInit {
   run() {
     console.log('I\'m header');
   }
+  getparentrun() {
+    // this.parentRun();
+    this.parent.run();
+    this.outer.emit('header send msg!');
+  }
+
 }
