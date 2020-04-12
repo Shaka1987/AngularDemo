@@ -42,13 +42,11 @@ export class RequestService {
 
   getRxjsInervalData() {
     let count = 0;
-    count++;
     return new Observable((observer) => {
       setInterval(() => {
-        const data = 'this is rxjs data' + count++;
-        observer.next(data);
+        observer.next(count++);
         // observer.error('error');
-      }, 2000);
+      }, 1000);
     });
   }
 

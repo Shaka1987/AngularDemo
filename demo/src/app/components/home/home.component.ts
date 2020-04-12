@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { filter, map } from 'rxjs/operators';
 import { RequestService } from 'src/app/services/request.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -39,7 +39,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 1000);
 
     const streamInerval = this.request.getRxjsInervalData();
-    streamInerval.subscribe((data) => {
+    streamInerval.pipe(
+      filter((value: any) => {
+        if (value % 2 === 0) {
+          return true;
+        }
+       }),
+      map((value: any) => {
+        return value * 2;
+      })
+    ).subscribe((data) => {
       console.log(data);
     });
 
