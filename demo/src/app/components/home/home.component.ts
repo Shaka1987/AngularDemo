@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public flag: any = true;
   public title = 'home title';
-  constructor() { }
+  constructor(public request: RequestService) { }
 
   ngOnInit(): void {
     const oBox: any = document.getElementById('box');
     console.log(oBox.innerHTML);
     oBox.style.color = 'red';
+    const data = this.request.getCallbackData((name: any) => {
+
+      console.log(name);
+    });
   }
 
   ngAfterViewInit(): void {
