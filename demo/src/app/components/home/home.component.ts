@@ -16,9 +16,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
     const oBox: any = document.getElementById('box');
     console.log(oBox.innerHTML);
     oBox.style.color = 'red';
-    const data = this.request.getCallbackData((name: any) => {
 
-      console.log(name);
+    const syncData = this.request.getData();
+
+    const callbackData = this.request.getCallbackData((data: any) => {
+      console.log(data);
+    });
+
+    const promiseData = this.request.getPromiseData();
+    promiseData.then((data) => {
+      console.log(data);
+    });
+
+    const rxjsData = this.request.getRxjsData();
+    rxjsData.subscribe((data) => {
+      console.log(data);
     });
   }
 
