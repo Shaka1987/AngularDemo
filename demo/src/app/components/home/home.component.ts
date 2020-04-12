@@ -28,10 +28,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(data);
     });
 
-    const rxjsData = this.request.getRxjsData();
-    rxjsData.subscribe((data) => {
+
+    const stream = this.request.getRxjsData();
+    const d = stream.subscribe((data) => {
       console.log(data);
     });
+
+    setTimeout(() => {
+      d.unsubscribe();
+    }, 1000);
+
+    const streamInerval = this.request.getRxjsInervalData();
+    streamInerval.subscribe((data) => {
+      console.log(data);
+    });
+
   }
 
   ngAfterViewInit(): void {

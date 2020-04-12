@@ -35,7 +35,21 @@ export class RequestService {
         const data = 'this is rxjs data';
         observer.next(data);
         // observer.error('error');
-      }, 1000);
+      }, 2000);
     });
   }
+
+
+  getRxjsInervalData() {
+    let count = 0;
+    count++;
+    return new Observable((observer) => {
+      setInterval(() => {
+        const data = 'this is rxjs data' + count++;
+        observer.next(data);
+        // observer.error('error');
+      }, 2000);
+    });
+  }
+
 }
