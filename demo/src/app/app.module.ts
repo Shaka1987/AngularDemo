@@ -1,3 +1,4 @@
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,8 +11,10 @@ import { NewsComponent } from './components/news/news.component';
 import { SearchComponent } from './components/search/search.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { TransitionComponent } from './components/transition/transition.component';
+import { HttpserviceService } from './services/httpservice.service';
 import { RequestService } from './services/request.service';
 import { StorageService } from './services/storage.service';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +30,15 @@ import { StorageService } from './services/storage.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [StorageService, RequestService],
+  providers: [
+    StorageService,
+    RequestService,
+    HttpserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

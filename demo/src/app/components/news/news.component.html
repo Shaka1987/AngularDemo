@@ -3,3 +3,19 @@
 <div #myBox>
     This news
 </div>
+<button (click)="getData()">get data</button>
+<br>
+<br>
+<button (click)="doLogin()">Login</button>
+<br>
+<br>
+<button (click)="getJsonpData()">get jsonp data</button>
+<br>
+<br>
+<button (click)="getaxiosData()">get axios data</button>
+<br>
+<hr>
+<br>
+<ul>
+    <li *ngFor="let item of list">{{item.title}}</li>
+</ul>
