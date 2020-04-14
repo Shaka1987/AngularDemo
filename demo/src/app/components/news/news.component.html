@@ -3,6 +3,19 @@
 <div #myBox>
     This news
 </div>
+<br>
+<br>
+<a [routerLink]="[ '/newcontent' ]" routerLinkActive="active">newscontent</a>
+<br>
+<br>
+<ul>
+    <li *ngFor="let item of newslist; let key = index;">
+        <!-- <a href="#">{{key}}---{{item}}</a> -->
+        <a [routerLink]="[ '/newscontent' ]"[queryParams]="{aid:key}">{{key}}---{{item}}</a>
+    </li>
+</ul>
+<br>
+<br>
 <button (click)="getData()">get data</button>
 <br>
 <br>

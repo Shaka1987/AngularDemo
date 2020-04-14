@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-newscontent',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newscontent.component.scss']
 })
 export class NewscontentComponent implements OnInit {
-
-  constructor() { }
+  public aid: any = 0;
+  constructor(public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((data) => {
+      this.aid = data.aid;
+    });
   }
 
 }

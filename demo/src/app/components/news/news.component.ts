@@ -11,9 +11,13 @@ export class NewsComponent implements OnInit, AfterViewInit {
   @ViewChild('myBox') myBox: any;
   @ViewChild('myheader') myheader: any;
   public list: any[] = [];
+  public newslist: any[] = [];
   constructor(public http: HttpClient, public httpService: HttpserviceService) { }
 
   ngOnInit(): void {
+    for (let i = 0; i < 10; i++) {
+      this.newslist.push(`this is ${i} news`);
+    }
   }
   ngAfterViewInit(): void {
     // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
