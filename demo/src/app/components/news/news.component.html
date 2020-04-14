@@ -5,13 +5,14 @@
 </div>
 <br>
 <br>
-<a [routerLink]="[ '/newcontent' ]" routerLinkActive="active">newscontent</a>
+<a [routerLink]="[ '/newscontent' ]" routerLinkActive="active">newscontent</a>
 <br>
 <br>
 <ul>
     <li *ngFor="let item of newslist; let key = index;">
         <!-- <a href="#">{{key}}---{{item}}</a> -->
-        <a [routerLink]="[ '/newscontent' ]"[queryParams]="{aid:key}">{{key}}---{{item}}</a>
+        <!-- <a [routerLink]="[ '/newscontent' ]"[queryParams]="{aid:key}">{{key}}---{{item}}</a> -->
+         <a [routerLink]="[ '/newscontent/', key ]">{{key}}---{{item}}</a>
     </li>
 </ul>
 <br>

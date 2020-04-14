@@ -15,6 +15,7 @@ import { HttpserviceService } from './services/httpservice.service';
 import { RequestService } from './services/request.service';
 import { StorageService } from './services/storage.service';
 import { NewscontentComponent } from './components/newscontent/newscontent.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NewscontentComponent } from './components/newscontent/newscontent.compo
     HeaderComponent,
     TransitionComponent,
     FooterComponent,
-    NewscontentComponent
+    NewscontentComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
