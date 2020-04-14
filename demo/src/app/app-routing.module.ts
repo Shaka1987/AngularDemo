@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { NewsComponent } from './components/news/news.component';
+import { NewscontentComponent } from './components/newscontent/newscontent.component';
 import { SearchComponent } from './components/search/search.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 
 const routes: Routes = [
     {path: 'search', component: SearchComponent},
     {path: 'todolist', component: TodolistComponent},
-    {path: '*', component: AppComponent}
+    {path: 'news', component: NewsComponent},
+    {path: 'newscontent', component : NewscontentComponent},
+    {path: 'home', component : HomeComponent},
+    {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
@@ -15,4 +20,5 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
