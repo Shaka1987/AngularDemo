@@ -6,3 +6,19 @@
 <br>
 <br>
 <button (click)="goGetDataNews()">go to News with data</button>
+<div class="content">
+
+    <div class="left">
+
+        <a [routerLink]="[ '/product/pcate' ]" routerLinkActive="active">product cate</a>
+        <br>
+        
+        <a [routerLink]="[ '/product/plist' ]" routerLinkActive="active">product list</a>
+        <br>
+      
+    </div>
+    <div class="right">
+        
+        <router-outlet></router-outlet>
+    </div>
+</div>

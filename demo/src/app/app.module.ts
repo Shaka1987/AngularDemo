@@ -16,6 +16,10 @@ import { RequestService } from './services/request.service';
 import { StorageService } from './services/storage.service';
 import { NewscontentComponent } from './components/newscontent/newscontent.component';
 import { ProductComponent } from './components/product/product.component';
+import { WelcomeComponent } from './components/home/welcome/welcome.component';
+import { SettingComponent } from './components/home/setting/setting.component';
+import { PcateComponent } from './components/product/pcate/pcate.component';
+import { PlistComponent } from './components/product/plist/plist.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { ProductComponent } from './components/product/product.component';
     TransitionComponent,
     FooterComponent,
     NewscontentComponent,
-    ProductComponent
+    ProductComponent,
+    WelcomeComponent,
+    SettingComponent,
+    PcateComponent,
+    PlistComponent
   ],
   imports: [
     BrowserModule,

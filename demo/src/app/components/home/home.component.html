@@ -1,6 +1,24 @@
 <p>home works!</p>
 <app-header [headerTitle]="title" [parentRun]="run" [parent]="this" (outer)="recieveMsg($event)"></app-header>
-<div id= "box">
+
+<div class="content">
+
+    <div class="left">
+        <a [routerLink]="[ '/home/welcome' ]" routerLinkActive="active">welcome home</a>
+        <br>
+        
+        <a [routerLink]="[ '/home/setting' ]" routerLinkActive="active">system setting</a>
+        <br>
+        
+        
+    </div>
+    <div class="right">
+        <router-outlet></router-outlet>
+        
+    </div>
+</div>
+
+<div id="box">
     This is box!
 </div>
 <br>
