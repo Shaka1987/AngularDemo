@@ -30,7 +30,27 @@ export class NewsComponent implements OnInit, AfterViewInit {
   }
   getData() {
     // alert('get request!');
-    const api = 'http://a.itying.com/api/productlist';
+     const api = 'http://a.itying.com/api/productlist';
+     this.http.get(api).subscribe((response: any) => {
+      console.log(response);
+      this.list = response.result;
+    });
+  }
+
+  getProxyTest() {
+    // alert('get request!');
+    // const api = 'http://a.itying.com/api/productlist';
+    const api = '/api/proxy';
+    this.http.get(api).subscribe((response: any) => {
+      console.log(response);
+      this.list = response.result;
+    });
+  }
+
+  getExceptProxyTest() {
+    // alert('get request!');
+    // const api = 'http://a.itying.com/api/productlist';
+    const api = '/api/except';
     this.http.get(api).subscribe((response: any) => {
       console.log(response);
       this.list = response.result;

@@ -34,4 +34,4 @@ app.get('/news',function(req,res){
     res.jsonp({"msg":"this is news data"});
 })
 
-app.listen(3000,'127.0.0.1');
+app.listen(3001,'127.0.0.1');
